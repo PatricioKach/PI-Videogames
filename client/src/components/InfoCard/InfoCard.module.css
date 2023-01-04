@@ -1,10 +1,26 @@
 .detailContainer {
   padding: 1rem;
   margin: 3px;
-  border: solid red 2px;
+  background-color: rgba(170, 41, 187, 0.904);
+  border: solid rgb(248, 78, 11) 2px;
   width: 300px;
   text-align: center;
   height: 420px;
+}
+h2 {
+  color: aliceblue;
+  text-align: center;
+  padding-block: 16px;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
+
+.hiper {
+  text-decoration-line: none;
+  box-shadow: 4px rgba(67, 11, 75, 0.904);
+}
+.hiper :hover {
+  background-color: rgba(106, 17, 117, 0.904);
 }
 
 article {

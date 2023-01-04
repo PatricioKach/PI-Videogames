@@ -4,8 +4,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(6, 168, 1, 0.911);
-  border: solid 1px rgb(109, 110, 8);
+  background-color: rgba(177, 174, 180, 0.911);
+  border: solid rgb(248, 78, 11) 2px;
+  border-top: none;
   height: 80px;
 }
 

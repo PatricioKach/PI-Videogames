@@ -1,9 +1,14 @@
+.cont {
+  background-color: rgba(201, 64, 219, 0.897);
+}
+
 .contenedor {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 3px;
   border: 2px solid black;
+  background-color: rgba(177, 174, 180, 0.911);
   width: 100%;
   margin: auto 10px;
 }

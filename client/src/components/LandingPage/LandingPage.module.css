@@ -1,0 +1,14 @@
+.land {
+  height: 100%;
+  width: 100%;
+}
+.image {
+  height: 100%;
+  width: 100%;
+}
+.goHome {
+  position: absolute;
+  top: 35%;
+  left: 12%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

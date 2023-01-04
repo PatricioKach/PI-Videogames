@@ -26,7 +26,7 @@ export default function Cards() {
   }, []);
 
   return (
-    <div>
+    <div className={style.cont}>
       <FilterTitle />
       <Pagination
         estadoGames={estadoGames}

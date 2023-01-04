@@ -26,10 +26,12 @@ export default function Nav() {
         <img src="logo.png" alt="logo" className={style.logo} />
       </Link>
       <div className={style.actions}>
-        <div className={style.allActions}>
-          <p>Create new game!</p>
-          <Link to="/app/create">Click here!</Link>
-        </div>
+        <button className={style.allActions}>
+          <Link to="/app/create">
+            Create new game! <br />
+            -click here-
+          </Link>
+        </button>
         <div className={style.formu}>
           <p>Search by name</p>
           <form onSubmit={handleSubmit}>

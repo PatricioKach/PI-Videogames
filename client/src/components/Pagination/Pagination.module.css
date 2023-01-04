@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 .num {
@@ -11,8 +11,14 @@
   justify-content: center;
   align-items: center;
   margin: 2px;
+  color: white;
+  border: 0.5px solid black;
+  background-color: blueviolet;
+  cursor: pointer;
 }
 
 .arrow {
-  margin: 7px;
+  color: white;
+  border: 0.5px solid black;
+  background-color: rgb(102, 33, 167);
 }

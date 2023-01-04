@@ -2,15 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(10, 223, 3, 0.904);
-  border: solid 1px rgb(109, 110, 8);
-  margin: 7px 0 7px 0;
+  background-color: rgba(170, 41, 187, 0.904);
+  border: solid 2px rgb(248, 78, 11);
   height: 80 px;
   width: 100%;
 }
 
 .logo {
   width: 50px;
+}
+.allActions {
+  height: 50px;
+  border-radius: 6px;
 }
 
 .actions {
@@ -22,4 +25,5 @@
 .formu {
   text-align: center;
   padding-left: 6px;
+  padding-bottom: 6px;
 }
