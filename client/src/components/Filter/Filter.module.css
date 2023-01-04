@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(6, 168, 1, 0.911);
+  border: solid 1px rgb(109, 110, 8);
+  height: 80px;
+}
+
+section {
+  margin: 20px;
+}
+
+p {
+  color: white;
+}
+
+.recharge {
+  height: 60px;
+  border-radius: 6px;
+}

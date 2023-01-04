@@ -1,0 +1,16 @@
+.detailContainer {
+  padding: 1rem;
+  margin: 3px;
+  border: solid red 2px;
+  width: 300px;
+  text-align: center;
+  height: 420px;
+}
+
+article {
+  margin: 8px;
+}
+
+.image {
+  max-width: 250px;
+}

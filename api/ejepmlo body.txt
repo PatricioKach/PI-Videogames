@@ -1,0 +1,17 @@
+{ "name":"Kito Pizza" , 
+"image": "", 
+"genre": "aventura",
+ "description": "Programa de los 2000", 
+"released": "2003-10-10",
+ "rating": "10", 
+"platform": "Magic Kids"
+}
+
+{ "name":"Tetris" , 
+"image": "", 
+"genre": "logica",
+ "description": "Programa de los 60", 
+"released": "1960-01-01",
+ "rating": "10", 
+"platform": "famili game"
+}

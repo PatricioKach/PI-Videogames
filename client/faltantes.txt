@@ -1,0 +1,14 @@
+Faltantes del Front :
+-perfeccionar filtrados ( el alfabetico y el ubication, mas que 
+  nada como se montan los componentes)
+-perfeccionar create (imagenes, mapeado de genres y platforms)
+-estilos lindos
+-testing  (video de fede panella 50')
+-promises
+
+-Terminar de ENTENDER :
+--paginado
+--searchbar
+
+
+para unos buenos select, son buenos los formularios de google como ejemplo

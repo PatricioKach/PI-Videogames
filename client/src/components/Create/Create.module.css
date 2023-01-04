@@ -1,0 +1,15 @@
+.triangle {
+  cursor: pointer;
+}
+
+.list {
+  display: none;
+  flex-direction: column;
+}
+.show {
+  display: block;
+}
+
+span {
+  color: red;
+}

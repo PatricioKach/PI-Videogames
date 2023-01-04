@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(10, 223, 3, 0.904);
+  border: solid 1px rgb(109, 110, 8);
+  margin: 7px 0 7px 0;
+  height: 80 px;
+  width: 100%;
+}
+
+.logo {
+  width: 50px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.formu {
+  text-align: center;
+  padding-left: 6px;
+}
