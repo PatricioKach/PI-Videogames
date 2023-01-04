@@ -8,8 +8,8 @@ export default function FilterTitle() {
     <div className={style.filtro}>
       {estadoFilter ? (
         <div className={style.h}>
-          <h2> Selected order:</h2>{" "}
-          <h1> {estadoFilter === "choose" ? null : estadoFilter}</h1>
+          <span> Selected order:</span>
+          <span> {estadoFilter === "choose" ? null : estadoFilter}</span>
         </div>
       ) : null}
     </div>

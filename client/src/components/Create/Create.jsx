@@ -41,11 +41,33 @@ export default function Create() {
     return rightErrors;
   };
 
-  const handleChange = (e) => {
+  const deleteGenre = (value) => {
+    const currentArray = videogame.genres;
+    const index = currentArray.indexOf(value);
+    currentArray.splice(index, 1);
     setVideogame({
       ...videogame,
-      [e.target.name]: e.target.value,
+      genres: currentArray,
     });
+  };
+
+  const handleChange = (e) => {
+    if (e.target.name === "genres") {
+      const currentArray = videogame.genres;
+      if (!currentArray.includes(e.target.value)) {
+        currentArray.push(e.target.value);
+      } else return;
+
+      setVideogame({
+        ...videogame,
+        [e.target.name]: currentArray,
+      });
+    } else {
+      setVideogame({
+        ...videogame,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -135,6 +157,10 @@ export default function Create() {
                   value={videogame.genres}
                   onChange={handleChange}
                 >
+                  <option disabled value="">
+                    Selecciona una opción
+                  </option>
+
                   {estadoGenres.map((e) => (
                     <option key={e.name}>{e.name} </option>
                   ))}
@@ -142,6 +168,24 @@ export default function Create() {
               }
               {rightErrors.genres && <span>{rightErrors.genres} </span>}
             </div>
+            {videogame.genres.length > 0 && (
+              <div style={{ color: "black" }}>
+                {videogame.genres?.map((genre) => {
+                  return (
+                    <div>
+                      <p>{genre}</p>
+                      <button
+                        id={genre}
+                        type="button"
+                        onClick={() => deleteGenre(genre)}
+                      >
+                        eliminar
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
             {
               ///////////////
             }{" "}

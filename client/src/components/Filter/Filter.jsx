@@ -35,7 +35,7 @@ export default function Filter() {
 
   return (
     <div className={style.container}>
-      <p>Filters</p>
+      <p className={style.nameCont}>Filters</p>
 
       <section>
         <header>Genres</header>

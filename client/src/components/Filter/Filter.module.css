@@ -1,7 +1,6 @@
 .container {
   display: flex;
   text-align: center;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: rgba(177, 174, 180, 0.911);
@@ -14,7 +13,7 @@ section {
   margin: 20px;
 }
 
-p {
+.nameCont {
   color: white;
 }
 

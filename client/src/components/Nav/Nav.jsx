@@ -21,16 +21,15 @@ export default function Nav() {
 
   return (
     <div className={style.container}>
-      <Link to="/app">Home </Link>
+      <Link to="/app">
+        <p className={style.homeButton}>Home</p>
+      </Link>
       <Link to="/app">
         <img src="logo.png" alt="logo" className={style.logo} />
       </Link>
       <div className={style.actions}>
         <button className={style.allActions}>
-          <Link to="/app/create">
-            Create new game! <br />
-            -click here-
-          </Link>
+          <Link to="/app/create">Create new game!</Link>
         </button>
         <div className={style.formu}>
           <p>Search by name</p>

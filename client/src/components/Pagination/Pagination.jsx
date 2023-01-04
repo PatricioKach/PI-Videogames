@@ -25,7 +25,11 @@ export default function Pagination({
         </button>
       )}
       {numbers.map((e) => (
-        <button className={style.num} key={e} onClick={() => handleSetPage(e)}>
+        <button
+          className={currentPage === e ? style.numSelected : style.num}
+          key={e}
+          onClick={() => handleSetPage(e)}
+        >
           {e}
         </button>
       ))}
