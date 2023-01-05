@@ -9,7 +9,10 @@ export default function FilterTitle() {
       {estadoFilter ? (
         <div className={style.h}>
           <span> Selected order:</span>
-          <span> {estadoFilter === "choose" ? null : estadoFilter}</span>
+          <span className={style.nameFilt}>
+            {" "}
+            {estadoFilter === "choose" ? null : estadoFilter}
+          </span>
         </div>
       ) : null}
     </div>

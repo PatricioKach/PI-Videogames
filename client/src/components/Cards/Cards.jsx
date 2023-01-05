@@ -6,6 +6,7 @@ import style from "../Cards/Cards.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "../Pagination/Pagination";
 import FilterTitle from "../FilterTitle/FilterTitle";
+import Loading from "../Loading/Loading";
 
 export default function Cards() {
   const estadoGames = useSelector((state) => state.videogames);
@@ -52,7 +53,9 @@ export default function Cards() {
           })}
         </div>
       ) : (
-        <div>No hay juegos </div>
+        <div className={style.spinner}>
+          {!estadoGames.length && <Loading />}
+        </div>
       )}
       <Pagination
         estadoGames={estadoGames}

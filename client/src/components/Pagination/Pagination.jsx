@@ -17,7 +17,7 @@ export default function Pagination({
     <div className={style.pag}>
       {estadoGames.length !== 0 && (
         <button
-          className={style.arrow}
+          className={currentPage !== 1 ? style.arrow : style.arrowDis}
           onClick={() => handleSetPage(currentPage - 1)}
           disabled={currentPage === 1}
         >
@@ -35,7 +35,7 @@ export default function Pagination({
       ))}
       {estadoGames.length !== 0 && (
         <button
-          className={style.arrow}
+          className={currentPage !== limit ? style.arrow : style.arrowDis}
           onClick={() => handleSetPage(currentPage + 1)}
           disabled={currentPage === limit}
         >

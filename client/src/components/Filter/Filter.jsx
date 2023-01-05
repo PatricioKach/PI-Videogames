@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,11 +8,14 @@ import {
   getVideogames,
   filterByGenre,
   filterByUbication,
+  getVideogamesByName,
 } from "../../redux/actions";
 import style from "./Filter.module.css";
 
 export default function Filter() {
   const estadoGenres = useSelector((state) => state.genres);
+  const [search, setSearch] = useState("");
+
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -28,6 +31,16 @@ export default function Filter() {
   const handleChangeUbi = (e) => {
     dispatch(filterByUbication(e.target.value));
   };
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(getVideogamesByName(search));
+    setSearch("");
+  }
 
   useEffect(() => {
     dispatch(getGenres());
@@ -73,6 +86,24 @@ export default function Filter() {
         {" "}
         <Link to="/app">Recharge videogames</Link>
       </button>
+      {/* /////////////////////////////// */}
+      <div className={style.actions}>
+        <button className={style.allActions}>
+          <Link to="/app/create">Create new game!</Link>
+        </button>
+        <div className={style.formu}>
+          <p>Search by name</p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="Busque"
+              value={search}
+              onChange={handleChange}
+            />
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

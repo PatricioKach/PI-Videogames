@@ -2,7 +2,7 @@
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: rgba(177, 174, 180, 0.911);
   border: solid rgb(248, 78, 11) 2px;
   border-top: none;
@@ -20,4 +20,28 @@ section {
 .recharge {
   height: 60px;
   border-radius: 6px;
+}
+
+.formu {
+  text-align: center;
+  justify-content: space-between;
+  padding-left: 6px;
+}
+
+.formu p {
+  margin: 0;
+}
+
+.actions {
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.allActions {
+  height: 50px;
+  border-radius: 6px;
+  background-color: aquamarine;
 }

@@ -12,3 +12,7 @@
   max-width: 100%;
   margin: auto 10px;
 }
+.spinner {
+  display: flex;
+  justify-content: center;
+}

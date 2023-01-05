@@ -18,3 +18,12 @@
   padding-right: 5px;
   color: black;
 }
+
+.nameFilt {
+  border: 2px solid white;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  color: white;
+  background-color: rgba(106, 17, 117, 0.904);
+  font-weight: 800;
+}

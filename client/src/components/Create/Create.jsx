@@ -4,6 +4,7 @@ import { createVideogame, getGenres } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import style from "../Create/Create.module.css";
+import Loading from "../Loading/Loading";
 
 export default function Create() {
   const estadoGenres = useSelector((state) => state.genres);
@@ -33,8 +34,8 @@ export default function Create() {
     if (!videogame.released.length)
       rightErrors.released = "Debe ingresar released";
     if (!videogame.rating.length) rightErrors.rating = "Debe indicar el rating";
-    // if (!videogame.platforms.length)
-    //   rightErrors.platforms = "Debe indicar el platforms";
+    if (!videogame.platforms.length)
+      rightErrors.platforms = "Debe indicar el platforms";
     if (!videogame.genres.length) rightErrors.genres = "Debe indicar el genres";
     // if (!videogame.image.length) rightErrors.image = "Debe indicar el image";
 
@@ -82,19 +83,22 @@ export default function Create() {
   };
 
   return (
-    <>
-      <div>
+    <div className={style.comp}>
+      <div className={style.container}>
         <h1>Create a videogame</h1>
         <form onSubmit={handleSubmit}>
           <div>
             <div>
               <label>Name:</label>
               <input
+                className={style.inp}
                 name="name"
                 value={videogame.name}
                 onChange={handleChange}
               />
-              {rightErrors.name && <span>{rightErrors.name} </span>}
+              {rightErrors.name && (
+                <span className={style.err}>{rightErrors.name} </span>
+              )}
             </div>
             {
               ///////////////
@@ -102,6 +106,7 @@ export default function Create() {
             <div>
               <label>Description:</label>
               <input
+                className={style.inp}
                 name="description"
                 value={videogame.description}
                 onChange={handleChange}
@@ -116,6 +121,7 @@ export default function Create() {
             <div>
               <label>Released:</label>
               <input
+                className={style.inp}
                 name="released"
                 value={videogame.released}
                 onChange={handleChange}
@@ -126,8 +132,9 @@ export default function Create() {
               ///////////////
             }
             <div>
-              <label>Imagenes:</label>
+              <label>Images:</label>
               <input
+                className={style.inp}
                 name="image"
                 value={videogame.image}
                 onChange={handleChange}
@@ -140,6 +147,7 @@ export default function Create() {
             <div>
               <label>Rating:</label>
               <input
+                className={style.inp}
                 name="rating"
                 value={videogame.rating}
                 onChange={handleChange}
@@ -150,9 +158,21 @@ export default function Create() {
               ///////////////
             }{" "}
             <div>
+              <label>Platforms:</label>
+
+              <input
+                className={style.inp}
+                name="platforms"
+                value={videogame.platforms}
+                onChange={handleChange}
+              />
+              {rightErrors.platforms && <span>{rightErrors.platforms} </span>}
+            </div>
+            <div>
               <label>Genres:</label>
               {
                 <select
+                  className={style.inp}
                   name="genres"
                   value={videogame.genres}
                   onChange={handleChange}
@@ -169,17 +189,17 @@ export default function Create() {
               {rightErrors.genres && <span>{rightErrors.genres} </span>}
             </div>
             {videogame.genres.length > 0 && (
-              <div style={{ color: "black" }}>
+              <div className={style.gens}>
                 {videogame.genres?.map((genre) => {
                   return (
-                    <div>
+                    <div className={style.gen}>
                       <p>{genre}</p>
                       <button
                         id={genre}
                         type="button"
                         onClick={() => deleteGenre(genre)}
                       >
-                        eliminar
+                        X
                       </button>
                     </div>
                   );
@@ -189,51 +209,13 @@ export default function Create() {
             {
               ///////////////
             }{" "}
-            <div>
-              <label>Platforms:</label>
-
-              <input
-                name="platforms"
-                value={videogame.platforms}
-                onChange={handleChange}
-              />
-              {/* {rightErrors.platforms && <span>{rightErrors.platforms} </span>} */}
-            </div>
             <button type="submit" onChange={handleSubmit}>
-              Enviar
+              Create
             </button>
           </div>
         </form>
       </div>
-    </>
+      {/* <Loading /> */}
+    </div>
   );
-  //   <div>
-  //   <label>Nueva prueba de lista</label>
-  //   <div className={style.multiselector}>
-  //     <div className={style.selectfield}>
-  //       <input
-  //         type="text"
-  //         name=""
-  //         placeholder="Elegí"
-  //         id=""
-  //         className={style.inputselector}
-  //       />
-  //       <span className={style.triangle}>&#9660; </span>
-  //       <div className={style.list}>
-  //         <label for="item1" className={style.item1}>
-  //           <input type="checkbox" id="item1" />
-  //           item 1
-  //         </label>
-  //         <label for="item2" className={style.item2}>
-  //           <input type="checkbox" id="item2" />
-  //           item 2
-  //         </label>
-  //         <label for="item3" className={style.item3}>
-  //           <input type="checkbox" id="ite31" />
-  //           item 3
-  //         </label>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div>
 }
