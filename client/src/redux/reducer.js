@@ -4,6 +4,8 @@ const initialState = {
   videogameDetail: {},
   genres: [],
   nameFilter: "",
+  loading: false,
+  err: "Request no found",
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -13,16 +15,21 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         videogames: action.payload,
         allVideogames: action.payload,
+        nameFilter: "",
+        loading: false,
       };
     case "GET_VIDEOGAMES_BY_NAME":
       return {
         ...state,
         videogames: action.payload,
+        loading: false,
       };
+
     case "GET_VIDEOGAME_BY_ID":
       return {
         ...state,
         videogameDetail: action.payload,
+        loading: false,
       };
     case "GET_GENRES":
       return {
@@ -95,7 +102,11 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         videogames: [...state.videogames, action.payload],
       };
-
+    case "LOADING":
+      return {
+        ...state,
+        loading: true,
+      };
     default:
       return state;
   }

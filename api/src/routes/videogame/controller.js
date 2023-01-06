@@ -53,7 +53,7 @@ const getVideogames = async (req, res) => {
       );
 
       !allName.length
-        ? res.status(404).json("Videogame not found")
+        ? res.status(404).send("Videogame not found")
         : res.status(200).send(allName.slice(0, 15));
     }
   } catch (error) {

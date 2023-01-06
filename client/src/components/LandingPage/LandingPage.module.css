@@ -4,7 +4,7 @@
 }
 
 .image {
-  background-image: url("../../assets/landing-image.jpg");
+  background-image: url("../../assets/wallp-editada.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -18,8 +18,8 @@
   border-radius: 20px;
   color: white;
   font-weight: 800;
-  box-shadow: 0px 0px 27px 12px rgba(106, 17, 117, 0.4);
-  background-color: rgba(106, 17, 117, 0.904);
+  box-shadow: 0px 0px 27px 12px var(--but-nav);
+  background-color: var(--but-nav);
   position: absolute;
   top: 35%;
   left: 12%;
@@ -27,8 +27,8 @@
 }
 
 .goHome:hover {
-  color: rgba(106, 17, 117, 0.904);
-  box-shadow: 0px 0px 27px 14px rgba(106, 17, 117, 0.9);
+  color: var(--but-nav);
+  box-shadow: 0px 0px 27px 14px var(--but-nav);
   background-color: white;
   transition: all 0.3s ease-in-out;
 }

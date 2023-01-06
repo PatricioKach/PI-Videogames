@@ -3,23 +3,24 @@
   text-align: center;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(177, 174, 180, 0.911);
-  border: solid rgb(248, 78, 11) 2px;
+  background-color: var(--bg-color);
+  border: solid var(--borders) 2px;
   border-top: none;
   height: 80px;
 }
 
+.contFilter {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3px;
+  border: solid black 2px;
+  border-radius: 20px;
+}
+
 section {
   margin: 20px;
-}
-
-.nameCont {
-  color: white;
-}
-
-.recharge {
-  height: 60px;
-  border-radius: 6px;
 }
 
 .formu {
@@ -32,16 +33,44 @@ section {
   margin: 0;
 }
 
-.actions {
-  width: 360px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+.formBox {
+  background-color: var(--nav-details);
+  border: hidden;
+  border-radius: 20px;
+  color: white;
 }
 
-.allActions {
-  height: 50px;
-  border-radius: 6px;
-  background-color: aquamarine;
+.formBox:hover {
+  border: solid 0.5px;
+  border-radius: 20px;
+}
+
+.formButt {
+  background-color: var(--nav-details);
+  border: none;
+  border-radius: 20px;
+  color: white;
+}
+
+.buttImg {
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+}
+.buttImg:hover {
+  animation: buttImg 1.2s infinite;
+}
+
+@keyframes buttImg {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
 }

@@ -7,8 +7,58 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  background-color: rgba(201, 64, 219, 0.897);
+}
 
-  background-color: rgba(177, 174, 180, 0.911);
+:root {
+  --button-color: rgba(93, 12, 104, 0.986);
+  --bg-color: rgba(177, 174, 180, 0.911);
+  --nav-bg: rgba(138, 26, 153, 0.897);
+  --but-nav: rgba(106, 17, 117, 0.904);
+  --nav-details: rgba(159, 65, 172, 0.904);
+  --borders: rgb(248, 78, 11);
+}
+
+.buttNav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  text-decoration-color: white;
+  font-weight: 500;
+  color: white;
+  background-color: var(--but-nav);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.buttNav:hover {
+  box-shadow: 0px 0px 13px 7px var(--but-nav);
+}
+
+.sec-filter {
+  color: white;
+  margin: 0;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration-color: white;
+  font-weight: 500;
+  background-color: var(--but-nav);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.sel-filter {
+  background-color: rgba(159, 65, 172, 0.904);
+  color: white;
+  border-radius: 20px;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
 }
 
 /* html *{

@@ -4,7 +4,6 @@ import { createVideogame, getGenres } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import style from "../Create/Create.module.css";
-import Loading from "../Loading/Loading";
 
 export default function Create() {
   const estadoGenres = useSelector((state) => state.genres);
@@ -79,6 +78,18 @@ export default function Create() {
         [e.target.name]: e.target.value,
       })
     );
+    if (
+      ![
+        videogame.name,
+        videogame.description,
+        videogame.released,
+        videogame.rating,
+        videogame.platforms,
+        videogame.genres,
+      ].every(Boolean)
+    ) {
+      return alert("You should fill all inputs require");
+    }
     dispatch(createVideogame(videogame));
   };
 
@@ -134,6 +145,9 @@ export default function Create() {
             <div>
               <label>Images:</label>
               <input
+                type="file"
+                id="file"
+                accept="image/jpeg, image/png, image/jpg"
                 className={style.inp}
                 name="image"
                 value={videogame.image}
@@ -209,13 +223,24 @@ export default function Create() {
             {
               ///////////////
             }{" "}
-            <button type="submit" onChange={handleSubmit}>
+            <button
+              type="submit"
+              name="create"
+              onChange={handleSubmit}
+              disabled={
+                !videogame.name ||
+                !videogame.description ||
+                !videogame.released ||
+                !videogame.rating ||
+                !videogame.platforms ||
+                !videogame.genres
+              }
+            >
               Create
             </button>
           </div>
         </form>
       </div>
-      {/* <Loading /> */}
     </div>
   );
 }

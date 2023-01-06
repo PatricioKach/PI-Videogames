@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const getVideogames = () => {
   return async (dispatch) => {
+    dispatch({ type: "LOADING" });
     let pedidoBack = await axios.get("http://localhost:3001/videogames");
 
     return dispatch({ type: "GET_VIDEOGAMES", payload: pedidoBack.data });
@@ -10,6 +11,7 @@ export const getVideogames = () => {
 
 export const getVideogamesByName = (name) => {
   return async (dispatch) => {
+    dispatch({ type: "LOADING" });
     let pedidoBackName = await axios.get(
       `http://localhost:3001/videogames?name=${name}`
     );
@@ -22,6 +24,7 @@ export const getVideogamesByName = (name) => {
 
 export const getVideogameByID = (id) => {
   return async (dispatch) => {
+    dispatch({ type: "LOADING" });
     let pedidoId = await axios.get(`http://localhost:3001/videogame/${id}`);
     return dispatch({ type: "GET_VIDEOGAME_BY_ID", payload: pedidoId.data });
   };
@@ -62,11 +65,15 @@ export const createVideogame = async (payload) => {
     rating: payload.rating,
     platform: payload.platform,
   };
-  await axios
-    .post("http://localhost:3001/videogames", newVideogame)
-    .then(alert("creado con exito"));
+  try {
+    await axios
+      .post("http://localhost:3001/videogames", newVideogame)
+      .then(alert("creado con exito"));
 
-  return {
-    type: "CREATE_VIDEOGAME",
-  };
+    return {
+      type: "CREATE_VIDEOGAME",
+    };
+  } catch (error) {
+    alert("hubo un error");
+  }
 };

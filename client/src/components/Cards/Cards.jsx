@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import InfoCard from "../InfoCard/InfoCard";
 import { getVideogames } from "../../redux/actions";
-import style from "../Cards/Cards.module.css";
 import { useDispatch, useSelector } from "react-redux";
+import InfoCard from "../InfoCard/InfoCard";
 import Pagination from "../Pagination/Pagination";
 import FilterTitle from "../FilterTitle/FilterTitle";
 import Loading from "../Loading/Loading";
+import style from "../Cards/Cards.module.css";
+import Filter from "../Filter/Filter";
 
 export default function Cards() {
   const estadoGames = useSelector((state) => state.videogames);
+  const load = useSelector((state) => state.loading);
   const dispatch = useDispatch();
   const [videogamesPerPage] = useState(15);
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,6 +22,7 @@ export default function Cards() {
 
   const handleSetPage = (num) => {
     setCurrentPage(num);
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
@@ -28,41 +31,46 @@ export default function Cards() {
 
   return (
     <div className={style.cont}>
-      <FilterTitle />
-      <Pagination
-        estadoGames={estadoGames}
-        videogamesPerPage={videogamesPerPage}
-        handleSetPage={handleSetPage}
-        currentPage={currentPage}
-      />
-      {estadoGames?.length > 0 ? (
-        <div className={style.contenedor}>
-          {currentVideogame.map((e, i) => {
-            return (
-              <div key={`${e.id}-${i}`}>
-                <InfoCard
-                  name={e.name}
-                  image={e.image}
-                  genres={e.genres}
-                  alt={e.id}
-                  released={e.released}
-                  id={e.id}
-                />
-              </div>
-            );
-          })}
+      <Filter setCurrentPage={setCurrentPage} />
+      {load ? (
+        <div className="spinner">
+          <Loading />
         </div>
       ) : (
-        <div className={style.spinner}>
-          {!estadoGames.length && <Loading />}
-        </div>
+        <>
+          <FilterTitle />
+          <Pagination
+            estadoGames={estadoGames}
+            videogamesPerPage={videogamesPerPage}
+            handleSetPage={handleSetPage}
+            currentPage={currentPage}
+          />
+          {
+            <div className={style.contenedor}>
+              {currentVideogame.map((e, i) => {
+                return (
+                  <div key={`${e.id}-${i}`}>
+                    <InfoCard
+                      name={e.name}
+                      image={e.image}
+                      genres={e.genres}
+                      alt={e.id}
+                      released={e.released}
+                      id={e.id}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          }
+          <Pagination
+            estadoGames={estadoGames}
+            videogamesPerPage={videogamesPerPage}
+            handleSetPage={handleSetPage}
+            currentPage={currentPage}
+          />
+        </>
       )}
-      <Pagination
-        estadoGames={estadoGames}
-        videogamesPerPage={videogamesPerPage}
-        handleSetPage={handleSetPage}
-        currentPage={currentPage}
-      />
     </div>
   );
 }

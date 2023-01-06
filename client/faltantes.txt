@@ -2,12 +2,13 @@ Faltantes del Front :
 -perfeccionar filtrados ( el alfabetico y el ubication, mas que 
   nada como se montan los componentes)
 
--perfeccionar create (imagenes, mapeado de genres y platforms)
--estilos lindos
+-perfeccionar create (imagenes y platforms)
+
 
 -testing  (video de fede panella 50')
 -promises
-NO PUDE PUSHEAR
+
+-manejo de errores con TRY CATCH para que el cliente vea errores
 
 -Terminar de ENTENDER :
 --paginado

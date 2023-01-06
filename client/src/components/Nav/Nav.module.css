@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  background-color: rgba(170, 41, 187, 0.904);
-  border: solid 2px rgb(248, 78, 11);
+  background-color: var(--nav-bg);
+  border: solid 2px var(--borders);
   height: 80px;
   width: 100%;
 }
@@ -24,14 +24,14 @@
   border-radius: 20px;
   color: white;
   font-weight: 800;
-  box-shadow: 0px 0px 27px 12px rgba(106, 17, 117, 0.4);
-  background-color: rgba(106, 17, 117, 0.904);
+  box-shadow: 0px 0px 27px 12px var(--but-nav);
+  background-color: rgbavar(--but-nav);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .goHome:hover {
-  color: rgba(106, 17, 117, 0.904);
-  box-shadow: 0px 0px 27px 14px rgba(106, 17, 117, 0.9);
+  color: var(--but-nav);
+  box-shadow: 0px 0px 27px 14px var(--but-nav);
   background-color: white;
   transition: all 0.3s ease-in-out;
 }
