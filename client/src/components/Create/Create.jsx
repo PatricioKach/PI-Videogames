@@ -23,7 +23,7 @@ export default function Create() {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, [dispatch]);
+  }, []);
 
   const validate = (videogame) => {
     let rightErrors = {};

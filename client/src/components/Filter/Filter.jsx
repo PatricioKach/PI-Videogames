@@ -48,7 +48,7 @@ export default function Filter({ setCurrentPage }) {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className={style.container}>

@@ -8,10 +8,12 @@ import FilterTitle from "../FilterTitle/FilterTitle";
 import Loading from "../Loading/Loading";
 import style from "../Cards/Cards.module.css";
 import Filter from "../Filter/Filter";
+import Error from "../../Error/Error";
 
 export default function Cards() {
   const estadoGames = useSelector((state) => state.videogames);
   const load = useSelector((state) => state.loading);
+  const error = useSelector((state) => state.error);
   const dispatch = useDispatch();
   const [videogamesPerPage] = useState(15);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,6 +38,8 @@ export default function Cards() {
         <div className="spinner">
           <Loading />
         </div>
+      ) : error ? (
+        <Error />
       ) : (
         <>
           <FilterTitle />

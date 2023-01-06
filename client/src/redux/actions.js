@@ -2,31 +2,43 @@ import axios from "axios";
 
 export const getVideogames = () => {
   return async (dispatch) => {
-    dispatch({ type: "LOADING" });
-    let pedidoBack = await axios.get("http://localhost:3001/videogames");
+    try {
+      dispatch({ type: "LOADING" });
+      const pedidoBack = await axios.get("http://localhost:3001/videogames");
 
-    return dispatch({ type: "GET_VIDEOGAMES", payload: pedidoBack.data });
+      return dispatch({ type: "GET_VIDEOGAMES", payload: pedidoBack.data });
+    } catch (error) {
+      dispatch({ type: "ERROR", payload: error.message });
+    }
   };
 };
 
 export const getVideogamesByName = (name) => {
   return async (dispatch) => {
-    dispatch({ type: "LOADING" });
-    let pedidoBackName = await axios.get(
-      `http://localhost:3001/videogames?name=${name}`
-    );
-    return dispatch({
-      type: "GET_VIDEOGAMES_BY_NAME",
-      payload: pedidoBackName.data,
-    });
+    try {
+      dispatch({ type: "LOADING" });
+      let pedidoBackName = await axios.get(
+        `http://localhost:3001/videogames?name=${name}`
+      );
+      return dispatch({
+        type: "GET_VIDEOGAMES_BY_NAME",
+        payload: pedidoBackName.data,
+      });
+    } catch (error) {
+      dispatch({ type: "ERROR", payload: error.message });
+    }
   };
 };
 
 export const getVideogameByID = (id) => {
   return async (dispatch) => {
-    dispatch({ type: "LOADING" });
-    let pedidoId = await axios.get(`http://localhost:3001/videogame/${id}`);
-    return dispatch({ type: "GET_VIDEOGAME_BY_ID", payload: pedidoId.data });
+    try {
+      dispatch({ type: "LOADING" });
+      let pedidoId = await axios.get(`http://localhost:3001/videogame/${id}`);
+      return dispatch({ type: "GET_VIDEOGAME_BY_ID", payload: pedidoId.data });
+    } catch (error) {
+      dispatch({ type: "ERROR", payload: error.message });
+    }
   };
 };
 
