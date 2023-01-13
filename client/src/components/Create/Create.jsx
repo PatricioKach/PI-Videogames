@@ -33,10 +33,11 @@ export default function Create() {
     if (!videogame.released.length)
       rightErrors.released = "Debe ingresar released";
     if (!videogame.rating.length) rightErrors.rating = "Debe indicar el rating";
+    if (!Number(videogame.rating))
+      rightErrors.rating = "Deben ser solo numeros";
     if (!videogame.platforms.length)
       rightErrors.platforms = "Debe indicar el platforms";
     if (!videogame.genres.length) rightErrors.genres = "Debe indicar el genres";
-    // if (!videogame.image.length) rightErrors.image = "Debe indicar el image";
 
     return rightErrors;
   };
@@ -63,6 +64,12 @@ export default function Create() {
         [e.target.name]: currentArray,
       });
     } else {
+      setRightErrors(
+        validate({
+          ...videogame,
+          [e.target.name]: e.target.value,
+        })
+      );
       setVideogame({
         ...videogame,
         [e.target.name]: e.target.value,
@@ -223,19 +230,7 @@ export default function Create() {
             {
               ///////////////
             }{" "}
-            <button
-              type="submit"
-              name="create"
-              onChange={handleSubmit}
-              disabled={
-                !videogame.name ||
-                !videogame.description ||
-                !videogame.released ||
-                !videogame.rating ||
-                !videogame.platforms ||
-                !videogame.genres
-              }
-            >
+            <button type="submit" name="create" onChange={handleSubmit}>
               Create
             </button>
           </div>
