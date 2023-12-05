@@ -25,26 +25,36 @@ export default function CardDetail() {
         <Error />
       ) : (
         <>
-          <h1>{estadoGame?.name} </h1>
-          <img src={estadoGame?.image} alt={estadoGame?.id} />
-          <div>
-            <b> Description</b> <br />
-            {estadoGame?.description}
-          </div>
-          <div>
-            <b> Released </b>
-            <br />
-            {estadoGame?.released}
-          </div>
-          <div>
-            <b> Rating </b>
-            <br />
-            {estadoGame?.rating}
-          </div>
-          <div>
-            <b>Plataforms </b>
-            <br />
-            {estadoGame?.platforms}
+          <h1 className={style.tit}>{estadoGame?.name} </h1>
+          <div className={style.nonTitle}>
+            <img
+              src={estadoGame?.image}
+              alt={estadoGame?.id}
+              className={style.image}
+            />
+            <div className={style.text}>
+              <div className={style.nonDescription}>
+                <div>
+                  <h2> Released </h2>
+                  <br />
+                  {estadoGame?.released}
+                </div>
+                <div>
+                  <h2> Rating </h2>
+                  <br />
+                  {estadoGame?.rating}
+                </div>
+                <div>
+                  <h2>Plataforms </h2>
+                  <br />
+                  {estadoGame?.platforms}
+                </div>
+              </div>
+              <div>
+                <h2> Description</h2> <br />
+                {estadoGame?.description}
+              </div>
+            </div>
           </div>
         </>
       )}
