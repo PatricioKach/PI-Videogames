@@ -35,7 +35,7 @@ export default function CardDetail() {
             <div className={style.text}>
               <div className={style.nonDescription}>
                 <div>
-                  <h2> Released </h2>
+                  <h2> Released---------------- </h2>
                   <br />
                   {estadoGame?.released}
                 </div>
